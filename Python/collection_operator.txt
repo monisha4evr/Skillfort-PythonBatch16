@@ -1,0 +1,42 @@
+Collection
+1.list
+    mutable
+    allow duplicate
+    ordered (indexed)
+    hetreogeneous element
+
+2.Tuple (Immutable data type)
+    immutable (can't do modification)
+    ordered (indexed)
+    allow duplicate
+    hetreogeneous element
+
+3.set:
+    unordered
+    unique element
+    mutable
+
+4.dictionary
+    ordered
+    mutable
+    allow duplicate Value,key unique
+
+
+operators
+1.arithmetic operators (+ , -,*,/,//,%)
+2.asignment operators (=,+=,-=)
+3.comparision (==, >= ,<= , !=, is)
+    is  compare the address 
+
+    a=10 ; b=10;  a==b true a is b =true
+    a=[1,2,3]; b=[1,2,3] a==b true ; a is b=false
+4.logical operators
+    and or not
+5.bitwise && || ~
+
+6.membership operator 
+    in ,not in
+
+7.Identity operator
+is,isnot
+determine whether the item is present in the collection of object.
