@@ -48,9 +48,19 @@ print(id(a))
 
 a = 3 + 4j
 print(type(a))  # complex 
-print(id(a))
     
-    
+a=[1,2,3]
+print(type(a))  # List 
+
+a=(1,2,3)
+print(type(a))  # <class 'tuple'> 
+print(id(a)) 
+
+a={1,2,3}
+print(type(a))  # <class 'set'> 
+
+a={"name":"apple"}
+print(type(a))  # <class 'dict'> 
 
 # implicit Type Conversion
 a=10 #type - int
