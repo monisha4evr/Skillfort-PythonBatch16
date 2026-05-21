@@ -90,7 +90,8 @@ Variables:
 
 -----------------------------------------------------
 Data types:
-    Primitive / non-primitive
+    everything is an object, 
+    including basic data types like integers, floats, booleans, and strings.
 
     1. Numeric Types (  integer(int) , float (float), complex)
     2. Sequence Types (  string (str), list (list),tuple (tuple),Range (range))
@@ -108,11 +109,28 @@ Data types:
 Give Examples on:
     type(),id()
 
-non-primitive:
+Collection
     1. List → “Students attendance list”
     2. Tuple → “Aadhar Number / Train Seat”
     3. Set → “Unique Email
     4. Dictionary → “Student Record”
+
+Immutable Core Types
+    Once created, the value of these objects cannot be changed in memory. 
+    If you modify them, Python creates a completely new object.
+        Integers (int)
+        Floats (float)
+        Booleans (bool)
+        Strings (str)
+        Tuples (tuple)
+
+Mutable Core Types
+    The value of these objects can be changed directly in memory
+    without creating a new object.
+        Lists (list)
+        Dictionaries (dict)
+        Sets (set)
+
 
 1.typecasting
     the process of converting a variable from one data type to another

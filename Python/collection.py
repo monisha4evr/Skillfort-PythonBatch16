@@ -62,6 +62,8 @@ print(11/2,"  |  ", 11//2)  # 5.5  |  5
 print(10%5) # 0 
 
 #2.asignment operators
+c,b=10,20
+print(b,c)
 a=10
 a+=5
 print(a) # 15
@@ -102,3 +104,4 @@ print(5 not in list_a)#true
 #7.Identity Operator (is,isnot)
 print(list_a is list_b) #false
 print(list_a is list_c) #true
+print(list_a is not list_c) #true

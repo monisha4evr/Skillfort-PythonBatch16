@@ -1,0 +1,46 @@
+Strings:
+ immutable sequence of characters
+
+ Immutability:  Once created, a string cannot be changed.
+                Modifying a string actually creates a brand-new string in memory.
+ No Character Type: Unlike some languages,
+                    Python doesn't have a separate char type; 
+                    a single character is just a string of length 1.
+
+Define
+ var="name"
+ a='apple'
+ print(var,a)
+
+Basic Operation:
+    1. Indexing eg: s[0] s[-1]
+    2. Slicing  : syntax:[start:end]
+    3. concatenation : (+)
+    4. Repetition : (*)
+
+Common String Methods
+
+Method	Description
+upper()	    => Converts to uppercase
+lower()	    => Converts to lowercase
+title()	    => Capitalizes each word
+capitalize()=> Capitalizes first letter
+strip()	    => Removes spaces (left & right)
+lstrip()    => Removes left spaces
+rstrip()    => Removes right spaces
+replace(a,b)=> Replace substring
+split()	    => Split string into list
+join()	    => Join elements with a separator
+find()	    => Returns index of substring
+index()	    => Like find but error if not found
+startswith()=> Check beginning
+endswith()	=> Check ending
+count()	    => Count occurrences
+isalpha()	=> Only alphabets
+isdigit()	=> Only digits
+isalnum()	=> Alphabets + numbers
+islower()	=> All lowercase?
+isupper()	=> All uppercase?
+swapcase()	=> Change lower <-> upper
+format()	=> Insert values
+len(string) => Returns the total number of characters
