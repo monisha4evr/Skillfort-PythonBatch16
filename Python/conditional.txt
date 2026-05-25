@@ -1,0 +1,49 @@
+Python Conditional Statements
+    1. If statements
+    2. If-else statements
+    3. If-elif-else statements
+
+used to control the flow of execution based on specific conditions, 
+allowing your program to make decisions. 
+They evaluate expressions to a Boolean value—either True or False
+to determine which block of code to run
+
+Core Keywords
+if: The fundamental decision-making statement. 
+    It executes a block of code only if the specified condition is True.
+elif: Short for "else if." 
+    It checks additional conditions if the preceding if or elif statements were False.
+else: The catch-all statement. 
+    It executes a block of code if none of the preceding conditions were met
+
+
+Ternary Operator:
+    variable = value_if_true if condition else value_if_false
+Notes:
+Indentation is mandatory in Python.
+elif means “else if”.
+we can use Multiple elif blocks.
+it only execute First true condition
+
+simple if 
+    syntax:
+        if condition :
+            #statement
+
+if else
+    syntax:
+        if condition:
+            #statement
+        else:
+            #statement
+
+elif
+    syntax:
+        if condition:
+            #statement
+        elif condition:
+            #statement
+        else:   
+            #statement
+
+

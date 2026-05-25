@@ -85,11 +85,11 @@ print(not a)  #false
 #5.Bitwise Operator
 a = 1      # 0001
 b= 2       # 0010
-print(a&b) # 0
-print(a|b) # 3
+print(a&b) # 0 # 1 1 => 1 , 0 1 => 0 ,  1 0 => 0 ,0 0 => 0
+print(a|b) # 3 # 1 1 => 1 , 0 1 => 1 ,  1 0 => 1 ,0 0 => 0
 print(~a)  # -2 -(n+1)
-print(a>>2) #0001 >> 00 + 0000   ans : 0
-print(a<<2) # 0001 << 00 + 0100  ans : 4
+print(a>>2) #0001 >> 00 + 0001  =>0000   ans : 0
+print(a<<2) # 0001 << 0001 + 00  => 0100    ans : 4
 
 #6.membership operator (in ,not in)
 list_a = [1, 2, 3]
