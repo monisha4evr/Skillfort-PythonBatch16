@@ -1,0 +1,28 @@
+If
+1. Warning on Balance low 
+2. 18 above driving licence
+3. Above 1000 10% discount
+
+If else
+1. Pass or fail
+2. Even or odd
+3. Logged in success or failed
+
+Elif 
+1. Traffic signal
+2. Battery level
+3. Bus ticket/ movie tickets based on age
+
+Nested if
+1. Cash withdrawal (account , balance) 
+2. Job interview ( degree, experience) 
+3. Online delivery availability (pincode,  item stock status)
+
+When to use nested 
+1. Check user first then password 
+When to use logical
+1. Flight la boarding check(Passport , tickets)
+
+
+1. Right shift
+2. member operator in tuple
