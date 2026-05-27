@@ -20,6 +20,10 @@ while i>=1 :  # 5>=1 T  4>=1 T  3>=1 T  2>=1 T 1>=1 T 0>=1 F
     print(i,end=" ") # 5 4 3 2 1
     i-=1 #  5-1 =4  4-1 =3 3-1 =2 2-1 = 1  1-1 = 0
 
+a=123
+b=str(a)
+print(b[::-1])
+
 a=123  #output 321
 rev=0
 while a>0: #123  12>0 T  1>0 T  F
@@ -50,6 +54,7 @@ for i in a:
     if i%2==0:
         even.append(i)
 print(even)
+
 
 
 str1="madam"
