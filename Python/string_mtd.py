@@ -2,6 +2,8 @@ str="apple"
 print(str[::-1]) # elppa - Reverse the String
 print(str[1:5]) #pple (n-1) - slicing start and ending Index
 print(str[1]) #p - Indexing
+print(str[4:1:-2])
+
 
 print(str.capitalize()) #Apple
 print(str.upper()) #APPLE

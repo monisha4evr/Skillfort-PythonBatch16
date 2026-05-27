@@ -1,0 +1,94 @@
+
+x = [0]
+print("Truthy" if x else "Falsy")
+* Answer: Truthy
+
+## 2. The Multi-Type Falsy List
+
+items = [0, 0.0, "", [], (), {}, None]
+print([bool(i) for i in items])
+
+* Answer: [False, False, False, False, False, False, False]
+
+## 3. Spaces inside a String
+
+msg = " "
+print("Yes" if msg else "No")
+* Answer: Yes
+
+## 4. The Short-Circuit and Game
+
+print(10 and 20)
+print(0 and 20)
+* Answer: 20  0
+
+## 5. The Short-Circuit or Game
+
+print(10 or 20)
+print([] or "Python")
+* Answer: 10 then "Python"
+
+
+## 6. Boolean Integer Equality
+
+print(True == 1)
+print(False == 0)
+print(True == 5)
+* Answer: True, True, False
+
+
+## 7. The Chained Boolean Logic
+
+result = "A" or "B" and "C"
+print(result)
+* Answer: "A"
+
+## 8. Negative Numbers Condition
+
+num = -5
+print("Truthy" if num else "Falsy")
+* Answer: Truthy
+
+## 9. Logical not Operator Conversion
+
+x = "Hello"
+print(not x)
+* Answer: False
+
+## 10. Ultimate Mixed Boolean Evaluation
+
+a = [1]b = []
+print(bool(a and b))
+* Answer: False
+
+
+
+
+   1. Ternary Operator: x = "A" if 10 > 20 else "B" if 10 == 10 else "C" ➡️ Output: B
+   2. Logical Operators (and/or):
+   * 10 and 20 ➡️ 20 (First value True-aa iruntha second value tharum)
+      * 10 and 0 ➡️ 0
+      * 0 and 20 ➡️ 0 (First-ey Falsy-na athoda stop aagum)
+   3. Negative Slicing: nums[4:1:-1] ➡️ `` (Reverse-la elements edukkum)
+   4. Out-of-range Slice: nums[1:100] ➡️ `` (Error varathu, available elements mattum varum)
+   5. Empty Slice: nums[5:2] ➡️ [] (Direction thappa iruntha empty list tharum)
+   6. Slice Assignment: nums[1:4] = [99] ➡️ `` (Middle elements-ai delete panni replace pannum)
+   7. Extended Slice Error: nums[::2] = [99] ➡️ ValueError (Size mismatch aana insert panna mudiyaathu)
+   8. Slice Insertion: nums[1:1] = [99] ➡️ `` (Element-ai specific index-la insert pannum)
+   9. Slice Deletion: del nums[1:3] ➡️ `` (Specific index items-ai delete pannum)
+
+------------------------------
+
+Python-la basic numbers mathiri illama, advanced types-la sila unique behavior iruku. Intha code-oda output enna varum nu guess pannunga machi:
+
+data = [0, 0.0, "", [], (), {}, None, set()]
+result = [item for item in data if item]
+print(result)
+
+## Options
+
+* Option 1: [0, 0.0, "", [], (), {}, None, set()] (Full list)
+* Option 2: [] (Empty list)
+* Option 3: [0.0, set()]
+* Option 4: SyntaxError
+
