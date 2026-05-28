@@ -282,7 +282,63 @@ print(id(a),id(b),id(c))
 c.add(4)
 print(f"output a={a},  b={b} ,  c={c}")
 
+# Using list comprehension
+a = [i for i in range(6)]
 
+# Or even shorter
+a = list(range(6))
+
+a=[1,2,3]
+print([i*2 for i in a])
+
+a={"name":"apple","color":"Red","price":50}
+for i in a.keys():
+    print(i,end=" ")
+print() 
+for i in a.values():
+    print(i)
+a={"name":"apple","color":"Red","price":50}
+for k,v in a.items():
+    print(k,"=>",v)
+    
+n=5
+for i in range(1,n+1):
+    for j in range(i):
+        print("*",end=" ")
+    print()
+    
+n=5
+for i in range(1,n+1):
+    for j in range(n-i):
+        print(" ",end=" ")
+    for k in range(i):
+        print("*",end=" ")
+    print()
+    
+for i in range(5):
+    print(" "*(5-i) + "* "*i)
+    
+a=[i for i in range(6)]
+print(a)
+
+a=list(range(2,6))
+print(a)
+
+a=list(range(2,16,2))
+for i,n in enumerate(a):
+    print(i,n*2)
+print(a)
+
+a=list(range(5))
+for i in a:
+    print(i)
+    
+a=["arun","ar",'mm']
+for  i in a:
+    print(i)
+    
+for i in enumerate(a,start=1):
+    print(i)
 
 
 
