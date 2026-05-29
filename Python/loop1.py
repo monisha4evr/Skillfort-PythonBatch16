@@ -87,3 +87,63 @@ a={"name":"apple","color":"Green","price":50}
 for k,v in a.items():
     print(k,"value=>",v)
     
+
+for i in range(1,6):
+    print(i)
+    
+
+for i in range(1,6):
+    print(i)
+    if i==3:
+        break
+else:   
+    print("Run Succesfully")
+    
+# 1
+# 12
+# 123
+# 1234
+
+# 1
+# 22
+# 333
+# 4444
+
+n=5
+for i in range(1,n):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+    
+n=5
+for i in range(1,n):
+    for j in range(1,i+1):
+        print(i,end=" ")
+    print()
+    
+
+#ord() & chr()
+
+print(ord('A'))
+print(chr(65))
+
+for i in range(65,91):
+    print(chr(i))
+
+#enumerate
+
+l=["apple","orange","banana"]
+for index,i in enumerate(l,start=1):
+    print(index,i)
+   
+# Output: 
+# 1 apple
+# 2 orange
+# 3 banana
+    
+#Zip
+a=["Rajesh","Ram","Nagaraj","Tamil"]
+marks=[50,45,56]
+
+print(list(zip(a,marks)))
+#[('Rajesh', 50), ('Ram', 45), ('Nagaraj', 56)]
