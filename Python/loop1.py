@@ -9,6 +9,7 @@ for i in range(0,n):
     for j in range(0,n):
         print("(",i,j,")",end=" ")
        # print(f"({i}{j})",end=" ")
+       
     print()
     
 # i=0
@@ -22,6 +23,7 @@ for i in range(0,n):
 #     j=2 #(1,2)
 #     j=3 #-
 # i=2 #...
+
 
 n=4
 for i in range(1,n):
@@ -99,22 +101,21 @@ for i in range(1,6):
 else:   
     print("Run Succesfully")
     
+    
 # 1
 # 12
 # 123
 # 1234
-
-# 1
-# 22
-# 333
-# 4444
-
 n=5
 for i in range(1,n):
     for j in range(1,i+1):
         print(j,end=" ")
     print()
     
+# 1
+# 22
+# 333
+# 4444
 n=5
 for i in range(1,n):
     for j in range(1,i+1):
