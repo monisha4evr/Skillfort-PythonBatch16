@@ -62,6 +62,7 @@ for i in range(6):
     a.append(i)
 print(a)
 
+
 # 1.break
 # 2.continue
 # 3.pass
