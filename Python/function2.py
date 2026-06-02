@@ -102,7 +102,7 @@ def func():
     
 func()
 
-# it wont x value
+# it wont print x value
 
 def gen():
     yield 1
@@ -111,9 +111,7 @@ def gen():
     
 a=gen()
 print(next(a))
-a=gen()
 print(next(a))
-
 
 # Decorator
 
