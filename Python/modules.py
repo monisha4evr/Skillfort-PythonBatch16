@@ -1,10 +1,30 @@
 Modules:
     simply a file with a .py extension that contains 
-    code—like functions, classes, or variables—intended for reuse in other programs
+    code—like functions, classes, or variables
+    - intended for reuse in other programs
 3 types:
     built-in (math, os,dateTime)
     user-Defined (.py Files)
     external (numPy,Pandas,request...)
+    
+
+import datetime
+cur_date=datetime.datetime.now()
+print(cur_date.strftime("%y%m"))
+print(cur_date.strftime("%d-%m-%y"))
+
+date_string = "25-12-2026"
+print(datetime.datetime.strptime(date_string,))
+
+print(round(5.6))    
+import math
+
+print(math.round(5))
+math.ceil(x): Rounds a number up to the nearest integer.
+math.floor(x): Rounds a number down to the nearest integer.
+math.trunc(x): Drops the fractional part, returning the integer part.
+math.fabs(x): Returns the absolute float value of a number.
+math.factorial(n): Returns the factorial of a positive integer.
 
 
 File Handling:
@@ -82,3 +102,12 @@ def userData(age,userId,userName,d=10):
 print('------------------------------------')
 
 userData(userId = 102, age = 22, userName = 'Priya')
+
+def check_age(age):
+    if age<0:
+        raise ValueError("No")
+        
+try:
+    check_age(-5)
+except ValueError as error:
+    print(f"Error caught: {error}")

@@ -142,6 +142,8 @@ def say_hello():
 
 say_hello()
 
+
+
 # Real time Usecase
 
 # Logging: Tracking when functions are called and with what arguments.
@@ -150,5 +152,14 @@ say_hello()
 # Caching & Memoization: Storing expensive API or calculation results to avoid redundant operations.
 # Rate Limiting & Retries: Automatically retrying failed network requests
     
-    
+def changecase(func):
+    def myinner(x):
+        return func(x).upper()
+    return myinner
+
+@changecase
+def myfunction(name):
+    return "Hello "+name
+
+print(myfunction("Tamil"))    
     
