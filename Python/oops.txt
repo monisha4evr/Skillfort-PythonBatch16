@@ -1,0 +1,162 @@
+Exercise 1: Class, Objects & self (Time: 15 mins)Problem Statement: Create a Student class. Calculate their percentage and check if they passed or failed based on a cutoff of 40%.Interview Trap covered: Python-la self argument ethuku absolute mandatory-nu idhula puriyum.
+class Student:
+    def __init__(self, name, marks_list):
+        self.name = name
+        self.marks = marks_list
+
+    def get_percentage(self):
+        # Total marks directly calculated using python builtins
+        total = sum(self.marks)
+        return (total / (len(self.marks) * 100)) * 100
+
+    def check_status(self):
+        percentage = self.get_percentage()
+        if percentage >= 40:
+            return f"{self.name} PASSED with {percentage:.2f}%"
+        return f"{self.name} FAILED with {percentage:.2f}%"
+
+# Live Testing
+s1 = Student("Rahul", [85, 78, 90])
+print(s1.check_status())  # Output: Rahul PASSED with 84.33%
+
+s2 = Student("Arun", [30, 25, 40])
+print(s2.check_status())  # Output: Arun FAILED with 31.67%
+
+
+
+Exercise 2: Inheritance & super() (Time: 15 mins)Problem Statement: Create an Employee base class and a Developer child class. Add a specific programming_language attribute to the Developer using super().Interview Trap covered: Constructor overriding and how super().__init__() prevents code rewriting.
+
+class Employee:
+    def __init__(self, name, emp_id, salary):
+        self.name = name
+        self.emp_id = emp_id
+        self.salary = salary
+
+    def get_details(self):
+        return f"ID: {self.emp_id} | Name: {self.name}"
+
+class Developer(Employee):
+    def __init__(self, name, emp_id, salary, tech_stack):
+        # Pulling parent attributes safely
+        super().__init__(name, emp_id, salary)
+        self.tech_stack = tech_stack
+
+    # Method Overriding for interview demo
+    def get_details(self):
+        parent_info = super().get_details()
+        return f"{parent_info} | Tech: {self.tech_stack}"
+
+# Live Testing
+dev = Developer("Priya", "DEV102", 60000, "Python")
+print(dev.get_details()) # Output: ID: DEV102 | Name: Priya | Tech: Python
+
+
+Exercise 3: Encapsulation & Data Security (Time: 15 mins)Problem Statement: Secure a BankAccount class so nobody can directly change the balance from outside without proper validation rules.Interview Trap covered: Name mangling concept and why Direct modifications like account.__balance = -500 will fail.
+
+class BankAccount:
+    def __init__(self, owner, initial_balance):
+        self.owner = owner
+        self.__balance = initial_balance # Private attribute
+
+    # Getter
+    def get_balance(self):
+        return self.__balance
+
+    # Setter with strict data validation
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print(f"Deposited {amount}. New Balance: {self.__balance}")
+        else:
+            print("Invalid deposit amount!")
+
+# Live Testing
+acc = BankAccount("Vijay", 1000)
+acc.deposit(500)
+
+# Trying to hack/modify directly from outside
+acc.__balance = -5000 # Creates a new dummy variable due to name mangling
+print(acc.get_balance()) # Output: 1500 (Original balance remains safe!)
+
+
+
+Exercise 4: Polymorphism & Abstraction (Time: 20 mins)Problem Statement: Design a mini payment gateway system. Define a standard structural layout for payments, then implement CreditCard and UPI workflows.Interview Trap covered: Abstract classes cannot be instantiated. Every child must explicitly write the abstract methods.
+from abc import ABC, abstractmethod
+
+class PaymentGateway(ABC):
+    @abstractmethod
+    def process_payment(self, amount):
+        pass
+
+class UPIPayment(PaymentGateway):
+    def process_payment(self, amount):
+        return f"Processing UPI Payment of ₹{amount} via UPI PIN authentication."
+
+class CardPayment(PaymentGateway):
+    def process_payment(self, amount):
+        return f"Processing Card Payment of ₹{amount} via OTP verification."
+
+# Common interface function demonstrating Polymorphism
+def execute_transaction(payment_object, amount):
+    print(payment_object.process_payment(amount))
+
+# Live Testing
+upi = UPIPayment()
+card = CardPayment()
+
+execute_transaction(upi, 500)  # Dynamic behavior
+execute_transaction(card, 2500)
+
+
+
+Book class (Attributes: Title, Author, Is_Available).Library class (Methods: Add Book, Borrow Book, Return Book).
+
+
+
+🚀 PYTHON OOPs CHEAT SHEET (INTERVIEW QUICK REVISION)📌
+ 1. Class, Object & selfClass: Blueprint for objects.Object: Instance of a class.__init__: Constructor method called automatically during instantiation.self: Represents the current instance of the class. Used to access variables belonging to the class.
+ class Car:
+    def __init__(self, brand):
+        self.brand = brand  # Instance attribute
+
+c1 = Car("BMW")  # c1 is the object
+
+
+📌 2. Inheritance (Code Reusability)Concept: Child class inherits attributes and methods from a Parent class.super(): Function used to call the parent class methods or constructor.
+class Vehicle:
+    def __init__(self, type): self.type = type
+
+class Bike(Vehicle):
+    def __init__(self, type, brand):
+        super().__init__(type)  # Calls parent constructor
+        self.brand = brand
+
+📌 3. Polymorphism (Many Forms)Method Overriding: Child class redefines a parent method with the same name and arguments.Method Overloading: Defining multiple methods with same name but different arguments. (Note: Python does not support compile-time overloading natively; use default arguments instead).
+class Dog:
+    def speak(self): return "Woof"
+class Cat:
+    def speak(self): return "Meow"
+
+# Same interface, different behavior
+for animal in [Dog(), Cat()]: print(animal.speak())
+
+📌 4. Encapsulation (Data Hiding)Public: Access anywhere (self.name).Protected: Access within class & subclasses (self._name). Convention only.Private: Access restricted inside the class only (self.__name). Triggers Name Mangling.
+class Account:
+    def __init__(self):
+        self.__balance = 1000  # Private variable
+    def get_bal(self): return self.__balance  # Getter
+
+a = Account()
+# print(a.__balance) -> Throws AttributeError
+print(a.get_bal())   -> Works safely (1000)
+
+
+📌 5. Abstraction (Hiding Implementation)Concept: Shows only essential features and hides background details.Enforced by: abc module, ABC class, and @abstractmethod decorator. Abstract classes cannot be instantiated.
+
+from abc import ABC, abstractmethod
+class Animal(ABC):
+    @abstractmethod
+    def sound(self): pass  # Must be overridden by child
+
+
+⚠️ Top 3 "Interview Golden Rules" for FreshersName Mangling: Private variables (like __var) are internally renamed to _ClassName__var to avoid naming conflicts.MRO (Method Resolution Order): In multiple inheritance, Python searches attributes from left to right using the C3 Linearization algorithm. Check it via ClassName.__mro__.Class vs Static Methods: @classmethod takes cls as the first argument to modify class state. @staticmethod takes no mandatory first argument and acts like an isolated function inside the class namespace.

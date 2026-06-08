@@ -6,33 +6,45 @@
     <title>Forms</title>
 </head>
 <body>
-    <form action="">
+    <form action="" method="" enctype="multipart/form-data">
         <div id="first_name">
             <label for="firstname">First Name</label>
-            <input type="text" placeholder="Firstname" name="firstname" id="firstname" >
+            <input type="text" placeholder="Firstname" value="Azar" readonly name="firstname" id="firstname" >
         </div>
         <div>
             <label for="password">Password</label>
             <input type="password" name="password" id="pasword" required>
-            
         </div>
         <div>
             <label for="mbl">Mobile</label>
             <input type="number" name="mbl" id="mbl">
         </div>
         <div>
+            <label for="dob">DOB</label>
+            <input type="date" name="dob"  min="2026-06-08" max="2026-06-15" id="">
+        </div>
+
+        <div>
             <label for="gender">Gender</label>
-            <input type="radio" value="male" name="gender" id="">
-            <input type="radio" value="female" name="gender" id="">
+           Male <input type="radio" value="male" name="gender" id="">
+           Female  <input type="radio" value="female" name="gender" id="">
         </div>
         <div>
             <label for="course">Course</label>
-            <input type="checkbox"  name="python" id=""> Python
-            <input type="checkbox"  name="Java" id="">Java
+            <input type="checkbox" value="python" name="python" id=""> Python
+            <input type="checkbox"  value="java" name="Java" id="">Java
             <input type="hidden" name="hid_number" value="123">
+            <input type="hidden" name="secretkey" value="mysecret">
+            <input type="file" name="filename" multiple id="">
+            <select>
+                <option value="python">Python</option>
+                <option value="java">java</option>
+                <option value="php">PHP</option>
+            </select>
         </div>
         <div>
-            <button>Click Me</button>
+            <button >Click Me</button>
+            <input type="reset" value="Reset">Rest Me
         </div>
     </form>
     
