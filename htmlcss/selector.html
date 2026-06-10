@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <style>
+        body{
+            background-color: blue;
+            color:white;
+        }
+
+        div{
+            border:1px solid black;
+            padding:20px;
+            margin:20px;
+        }
+
+        div p{
+            color:black;
+        }
+
+        div>p{
+            color:wheat;
+        }
+
+        div+p{
+            background-color: blanchedalmond;
+            color:black;
+        }
+
+        div~p{
+              background-color: aqua;
+                color:black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur possimus quam consequuntur iure, error dolorum magni accusantium modi, odio minus tempore et deleniti cupiditate illo dignissimos obcaecati repudiandae! Ad.</p>
+        <span>
+            <p> Paragraph</p>
+        </span>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur possimus quam consequuntur iure, error dolorum magni accusantium modi, odio minus tempore et deleniti cupiditate illo dignissimos obcaecati repudiandae! Ad.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur possimus quam consequuntur iure, error dolorum magni accusantium modi, odio minus tempore et deleniti cupiditate illo dignissimos obcaecati repudiandae! Ad.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur possimus quam consequuntur iure, error dolorum magni accusantium modi, odio minus tempore et deleniti cupiditate illo dignissimos obcaecati repudiandae! Ad.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur possimus quam consequuntur iure, error dolorum magni accusantium modi, odio minus tempore et deleniti cupiditate illo dignissimos obcaecati repudiandae! Ad.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur possimus quam consequuntur iure, error dolorum magni accusantium modi, odio minus tempore et deleniti cupiditate illo dignissimos obcaecati repudiandae! Ad.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur possimus quam consequuntur iure, error dolorum magni accusantium modi, odio minus tempore et deleniti cupiditate illo dignissimos obcaecati repudiandae! Ad.</p>
+    </div>
+
+    <p>Outside to Div</p>
+    <p>Outside to Div 1</p>
+</body>
+</html>

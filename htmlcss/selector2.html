@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo-Element</title>
+    <style>
+
+        p::first-letter{
+            color:red;
+            font-size: xx-large;
+        }
+        p::first-line{
+            letter-spacing: 3px;
+        }
+        h2::after{
+            content: url('sample.jpg');
+        }
+        img[alt="alter"]{
+            color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2> Heading </h2>
+
+        <img src="sampless.jpg" alt="no_image">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quidem nesciunt vero corrupti, facere at quisquam placeat aut consequatur cum molestias voluptatibus voluptatum officiis, doloribus eaque voluptatem animi assumenda possimus!</p>
+    </div>
+</body>
+</html>
