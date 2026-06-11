@@ -49,6 +49,8 @@ Rules in Python Syntax
     2. Indentation is important
     3. No need for {} braces
     4. Statements end automatically in a new line
+
+    
  
 
 To save:

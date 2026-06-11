@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box sizing</title>
+    <style>
+        div{
+            border:1px solid blue;
+            height: 200px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        
+       .content{
+            background-color: wheat;
+            box-sizing: content-box;
+            padding: 20px;
+        }
+        .brdr{
+            background-color: aqua;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quae ad ducimus sit quos rerum facere, enim numquam eius impedit dolore! Voluptatum dolorum eos velit rem pariatur quis quam corporis?
+    </div>
+    <div class="brdr">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad reiciendis error illum esse, eos aperiam asperiores porro debitis excepturi blanditiis distinctio adipisci ab consequuntur, quis, veniam rem. Enim, sapiente facilis?
+    </div>
+</body>
+</html>

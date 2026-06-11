@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        @keyframes sample {
+            from{
+                background-color: blueviolet;
+            }
+            to{
+                background-color: brown;
+            }
+        }
+
+        div{
+            height: 50px;
+            width: 50px;
+            background-color: blue;
+            border-radius: 50%;
+            animation-name: sample;
+            animation-duration: 5s;
+            transform: translate(250px, 300px);
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
