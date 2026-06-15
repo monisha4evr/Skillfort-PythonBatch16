@@ -147,4 +147,25 @@ Mutable Core Types
 
     TypeError means you used the wrong type of object 
     ValueError means the object type is correct, but its actual value is invalid.
+
+
+
+| Conversion     | Rule                            |
+| -------------- | ------------------------------- |
+| String → Int   | Only digits (0-9), +, -         |
+| String → Float | Digits, +, -, one decimal point |
+| Float → Int    | Decimal part removed            |
+| Int → Float    | `.0` added                      |
+| Int → String   | Always possible                 |
+| Float → String | Always possible                 |
+| String → Bool  | Empty string=False, others=True |
+
+
+int() Rules
+Allowed  : 0-9, +, -
+Not Allow: ., letters, special chars
+
+float() Rules
+Allowed  : 0-9, +, -, .
+Not Allow: letters, special chars
 -------------------------------------------------------------------
