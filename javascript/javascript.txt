@@ -1,0 +1,103 @@
+Javascript
+
+👉 Programming Language
+👉 Makes interactivity in web page
+
+ 3 ways to connect with HTML 
+ 1. inline
+ 2. internal 
+ 3. External 
+
+ var , let , const are keywords to declare variables
+
+
+ Scope
+ ------
+ var 
+---
+ 1. redeclare
+ 2. reassign
+ 3. Scope : Function/Global  Scope
+ 4. hoisting - initialized as Undefined
+ 5. initial value not required
+
+ let 
+----
+ 1. no - redeclare
+ 2. re -assign
+ 3. Scope : Block Scope
+ 4. hoisting -Uninitialized (TDZ)
+ 5. initial value not required
+
+ const 
+ -----
+ 1. no - redeclare
+ 2. no - reassign 
+ 3. Scope : Block Scope
+ 4. hoisting - Uninitialized (TDZ)
+ 5. initial value  required
+
+
+ Variable Scope
+ 1. global 
+ 2. functional 
+ 3. block 
+
+
+Data Types
+
+👉 Primitive (basic types):
+
+    Number → 42, 3.14
+
+    String → "Hello"
+
+    Boolean → true, false
+
+    Undefined → variable declared but no value yet
+
+    Null → intentional "nothing"
+
+    NaN  → Not a Number
+
+    Symbol → unique value (used rarely)
+
+    BigInt → very large numbers
+
+👉 Non-primitive (objects):
+
+	Array → [1, 2, 3]
+    Object → {name: "Denny", age: 25}
+    Function → function greet() { ... }
+
+to find the data type -> typeof
+
+Type coercion
+1. implicit
+2. explicit
+
+    Three Types of Coercion
+        Strings, Numbers, and Booleans.
+    1. String:
+        (JavaScript converts the non-string operand into a string and concatenates them)
+    "5"+2 =52
+    console.log("false"+true) falseTrue
+    10 + 20 + "30"
+
+    2 Number:
+        => ( -, *, /, % or comparison operators )
+        "5" - 2 results in 3 (the string is converted to a number)
+        "5" * "2" results in 10
+        true + 1 results in 2 (booleans convert to numbers: true -> 1, false -> 0)
+        "hello" * 2 results in NaN 
+
+    3. Boolean Coercion
+    Happens in logical contexts like if statements, ternary operators, 
+    or when using logical operators (&&, ||, !). 
+    JavaScript classifies all values as either Truthy or Falsy
+    falsy:
+    0
+    ""
+    Null
+    Undefined
+    NaN
