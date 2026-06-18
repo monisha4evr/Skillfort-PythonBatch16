@@ -101,3 +101,88 @@ Type coercion
     Null
     Undefined
     NaN
+
+
+    a="madam";
+rev='';
+for(i of a){
+    console.log(i)
+}
+
+simple function
+syntax:
+
+function function_name(){ // parameter
+    // stattement
+}
+
+function_name() // argument
+
+function add(a,b=5){
+    return a+b
+}
+
+console.log(add(5,10))
+
+
+2. arrow function
+const add=()=>{}
+
+const add=(a,b)=>{console.log(a+b)}
+add(5,10)
+
+3. Anonymous function
+const add = function(){
+
+}
+add()
+
+const add=function(a,b){
+    console.log(a+b)
+}
+add(5,10)
+
+4. callback function
+A function that is passed as an argument to another function to run later
+function greet(bhuvana){
+    console.log("welcome")
+    bhuvana()
+    console.log("End")
+
+}
+
+function add(){
+    console.log(5+10)
+}
+
+greet(add);
+
+5. higerorder function
+    receive / return a function 
+
+function outer(){
+    console.log("outer function")
+    function inner(){
+        console.log("inner function")
+    }
+    return inner;
+}
+
+let outr=outer()
+outr()
+
+Closure
+    remember/retain  the outer function variable
+    function outer(){
+    let a=0
+    function inner(){
+        console.log(a++)
+    }
+    return inner;
+}
+
+let outr=outer()
+outr()
+outr()
+
+
