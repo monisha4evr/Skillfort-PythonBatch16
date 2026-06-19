@@ -185,4 +185,97 @@ let outr=outer()
 outr()
 outr()
 
+a="name"
+console.log(a.length)
+console.log(a[0])
 
+for(let i=0;i<=a.length;i++){
+    console.log(a[i])
+}
+
+a="apple"
+b=" Orange "
+console.log(a.toUpperCase())
+console.log(a.toLowerCase())
+console.log(a.slice(1,4))
+console.log(b)
+console.log(b.trim())
+c="I like javascript"
+console.log(c.replace("like","love"))
+console.log(c.split(' '))
+console.log(c.includes("love"))
+console.log(c.indexOf('a'))
+console.log(c.lastIndexOf('a'))
+console.log(c.charAt(4))
+d="and python"
+console.log(c.concat(d))
+console.log(b)
+console.log(b.trim())
+c="I like javascript"
+console.log(c.replace("like","love"))
+console.log(c.split(' '))
+console.log(c.includes("love"))
+console.log(c.indexOf('a'))
+console.log(c.lastIndexOf('a'))
+console.log(c.charAt(4))
+d="and python"
+console.log(c.concat(' ',d))
+
+
+Array:
+Mixed,number,string,object in array,2d
+console.log(nums.map((num)=>{return num*100}));
+console.log(nums.filter((num)=>num%2==0));
+console.log(nums.reduce((accumulator,currentelement)=>{return acc+currentelement},0))
+
+
+const person = {
+  name: "apple",   
+  age: 25,
+  isDeveloper: true,
+  skills: ["JS", "Python"] 
+};
+
+
+Spreed
+--------
+const fruits = ["apple", "orange"];
+const newFruits = [...fruits, "mango", "banana"];
+
+console.log(newFruits);
+
+const user = { name: "Ram", age: 25 };
+
+const updatedUser = { ...user, city: "Chennai" };
+
+console.log(updatedUser); 
+
+
+rest
+-------
+function sum(...numbers) {
+  console.log(numbers); 
+  
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(10, 20, 30, 40)); 
+
+destructuring:
+array:
+const fruits = ["apple", "orange", "banana"];
+const [first, second, third] = fruits;
+
+console.log(first);  
+console.log(second); 
+console.log(third);  
+
+
+object:
+
+const person = { name: "Karthik", age: 26, city: "Madurai", role: "Developer" };
+
+const { name, age, ...restOfData } = person;
+
+console.log(name); 
+console.log(restOfData);
