@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-3">Login </h1> 
+        <div class="text-right" style="width:300px">
+        <form action="">
+            
+            <div class="mb-3 mt-3">
+                <label for="username" class="form-label">Username </label>
+                <input type="text" name="uname" id="uname" placeholder="Username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label">Password </label>
+                <input type="password" name="pwd" id="pwd" value="" placeholder="password" class="form-control" required>
+            </div>
+            <button type="button" onclick="validate()" class="btn btn-primary w-100">Log in</button>
+
+        </form>
+        </div>
+    </div>
+
+    <script>
+       let  user_name = document.getElementById("uname")
+       let password = document.getElementById('pwd')
+       function validate(){
+            let u_name=user_name.value
+            let p_word=password.value
+            if (u_name == "admin" && p_word=="admin@123")
+            {
+                console.log("You are Successfully Logged IN")
+            }
+            else{
+                console.log("invalid Credential")
+            }
+
+       }
+
+    </script>
+    
+</body>
+</html>

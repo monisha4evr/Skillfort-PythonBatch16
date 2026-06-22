@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="mb-3 mt-3">
+                <label for="a_value" class="form-label">A Value </label>
+                <input type="text" name="a_value" id="a_value" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="b_value" class="form-label">B Value </label>
+                <input type="text" name="b_value" id="b_value" value="" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="c_value" class="form-label">C Value </label>
+                <input type="text" name="c_value" id="c_value" value="" readonly class="form-control">
+            </div>
+            <button type="button" onclick="add()">ADD</button>
+        </form>
+    </div>
+    
+    <script>
+        
+        a=document.getElementById("a_value")
+        b=document.getElementById("b_value")
+        c=document.getElementById("c_value")
+        function add(){
+            c_val=Number(a.value) + Number(b.value)
+            c.value=c_val   
+        }
+    </script>
+</body>
+</html>
