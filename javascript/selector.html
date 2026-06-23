@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+</head>
+<body>
+    <div>
+        <h1> Example for Selector</h1>
+        <h1> sample for Selector</h1>
+
+        <ol class="grp_collection">
+            <li>getElementById</li>
+            <li>getElementsByClassName</li>
+            <li>getElementsByTagName</li>
+            <li>querySelector</li>
+            <li>querySelectorAll</li>
+        </ol>
+
+        <ul class="grp_collection">
+            <li id="f1">Apple</li>
+            <li id="f2">Orange</li>
+            <li id="f3">Banana</li>
+            <li id="f4">Mango</li>
+        </ul>
+    </div>
+    <script>
+            console.log(document.getElementById('f1'))
+            console.log(document.getElementById('f3'))
+            console.log(document.getElementsByClassName('grp_collection')) /* HTML collection*/
+            const grp=document.getElementsByClassName('grp_collection')
+           /* grp.forEach(e=>console.log(e))*/
+           console.log(document.getElementsByTagName('h1')) /* HTML collection*/
+           console.log(document.querySelector('h1'))
+           console.log("***********",document.querySelector('.grp_collection'))
+           console.log(document.querySelectorAll('h1'))
+           const nd=document.querySelectorAll('h1')
+           nd.forEach(e=>console.log(e))
+
+
+
+    </script>
+</body>
+</html>

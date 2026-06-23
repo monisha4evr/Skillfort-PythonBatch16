@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+</head>
+<body>
+    <div id="Sample">
+        <ul id="content">
+            <li>createElement</li>
+            <li>appendChild</li>
+            <li>replaceChild</li>
+            <li>remove/removeItem</li>
+        </ul>
+        <ol id="test"> Fruits
+            <li id="f1">apple </li>
+            <li>Orange </li>
+            <li>Banana </li>
+            <li>Mango </li>
+        </ol>
+
+    </div>
+
+    task: 
+     add one button -> onclick -> item remove
+
+    <script>
+        const list=document.getElementById("test")
+        let newitem=document.createElement('li')
+        newitem.textContent="Grapes"
+        list.appendChild(newitem)
+
+        let toreplace=document.getElementById('f1')
+        let toadditem=document.createElement('li')
+        toadditem.textContent="PineApple"
+        list.replaceChild(toadditem,toreplace)
+
+    </script>
+
+</body>
+</html>

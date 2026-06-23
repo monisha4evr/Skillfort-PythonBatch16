@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute</title>
+</head>
+<body>
+    <div>
+        <ol>
+            <li>getAttribute</li>
+            <li>setAttribute</li>
+            <li>removeAttribute</li>
+        </ol>
+    </div>
+
+    <input type="text" name="uname" id="uname">
+    <script>
+        let username=document.getElementById('uname')
+        console.log(username.getAttribute('name'))
+        username.setAttribute("placeholder","Enter Name")
+        username.setAttribute("readonly","true")
+        username.setAttribute("disabled","true")
+        username.removeAttribute('disabled') 
+
+    </script>
+
+</body>
+</html>
