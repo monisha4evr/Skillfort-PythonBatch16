@@ -1,0 +1,40 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color:red;
+        }
+
+        .bold{
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    <div>
+        1. classlist 
+        2. Event Listener
+        3. preventDefault()
+        4. stopPropagation()
+    </div>
+
+    <p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora suscipit minima culpa atque provident incidunt commodi maxime minus facilis dolores at molestiae unde ipsa voluptatibus aut, inventore aspernatur quaerat enim.</p>
+
+    <script>
+        let paragraph=document.getElementById('para')
+            paragraph.classList.add('red')
+            paragraph.classList.add('bold')
+            paragraph.classList.remove('bold')
+           /* paragraph.classList.toggle('red')*/
+    </script>
+   
+</body>
+</html>

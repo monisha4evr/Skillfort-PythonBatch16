@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling</title>
+</head>
+<body>
+    <div id="div1" style="background-color:aliceblue;">
+        <ol id="o1">
+            <li id="i1">Item1</li>
+            <li id="i2">Item2</li>
+            <li id="i3">Item3</li>
+            <li id="i4">Item4</li>
+        </ol>
+        <ol id="o2">
+            <li id="i1">Item1</li>
+            <li id="i2">Item2</li>
+            <li id="i3">Item3</li>
+            <li id="i4">Item4</li>
+        </ol>
+
+    </div>
+    <script>
+        document.getElementById('div1').addEventListener('click',(e)=>{
+            console.log(e.target)
+            console.log("Div Clicked")
+        })
+        
+        document.getElementById('o1').addEventListener('click',()=>{
+            console.log("ol Clicked")
+        })
+
+        document.querySelector('li').addEventListener('click',(e)=>{
+            console.log("li Clicked");
+            e.stopPropagation();
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <form id="regForm">
+    <div>
+        <label>Full Name:</label>
+        <input type="text" id="username">
+        <span id="nameError" style="color:red"></span>
+    </div>
+    
+    <div>
+        <label>Email:</label>
+        <input type="text" id="email">
+        <span id="emailError" style="color:red"></span>
+    </div>
+    
+    <div>
+        <label>Password:</label>
+        <input type="password" id="password">
+        <span id="passwordError" style="color:red"></span>
+    </div>
+    
+    <div>
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassword">
+        <span id="confirmError" style="color:red"></span>
+    </div>
+    
+    <button type="submit">Register</button>
+    </form>
+<script>
+        document.getElementById("regForm").addEventListener("submit", function(event) {
+        // Form submit aagi page reload aavatha thaduka
+        event.preventDefault(); 
+        
+        // Elra error messages-aiyum clear panna
+        clearErrors();
+        let isValid = true;
+
+        // Inputs fetch panrom
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        // 1. Name Validation (Minimum 3 chars iruka vendum)
+        if (username === "") {
+            showError("nameError", "Name field cannot be empty");
+            isValid = false;
+        } else if (username.length < 3) {
+            showError("nameError", "Name must be at least 3 characters");
+            isValid = false;
+        }
+
+        // 2. Email Validation (RegEx use panni valid email check)
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (email === "") {
+            showError("emailError", "Email field cannot be empty");
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            showError("emailError", "Enter a valid email address");
+            isValid = false;
+        }
+
+        // 3. Password Validation (Min 8 chars, 1 uppercase, 1 number)
+        const passPattern = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+        if (password === "") {
+            showError("passwordError", "Password field cannot be empty");
+            isValid = false;
+        } else if (!passPattern.test(password)) {
+            showError("passwordError", "Must be 8+ chars with 1 uppercase letter and 1 number");
+            isValid = false;
+        }
+
+        // 4. Confirm Password Validation (Match check)
+        if (confirmPassword === "") {
+            showError("confirmError", "Please confirm your password");
+            isValid = false;
+        } else if (password !== confirmPassword) {
+            showError("confirmError", "Passwords do not match");
+            isValid = false;
+        }
+
+        // Ellam valid-ah iruntha submit aagum
+        if (isValid) {
+            alert("Registration Successful!");
+            document.getElementById("regForm").reset(); 
+        }
+    });
+
+    // Helper function: Error message kata
+    function showError(id, message) {
+        document.getElementById(id).innerText = message;
+    }
+
+    // Helper function: Errors clear seiya
+    function clearErrors() {
+        const errors = ["nameError", "emailError", "passwordError", "confirmError"];
+        errors.forEach(id => document.getElementById(id).innerText = "");
+    }
+</script>
+</body>
+</html>

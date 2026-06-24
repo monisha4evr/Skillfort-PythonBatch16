@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+    type 1: inline
+    type 2: Dom handler
+    type 3: Event Listener
+    <form action="">
+        <button type="button" onclick="alert('HI i am Click Event')"> Click Me </button>
+        <button type="button" onclick="test()"> Click here </button>
+
+        <button id="btn">HI there</button>
+
+        
+
+    </form>
+
+    <script>
+        function test(){
+            alert("hi i am example for inline Even handler")
+        }
+
+        btn=document.getElementById('btn')
+        btn.onclick=function(){
+            alert("I am from  Dom Handler")
+        }
+    </script>
+
+</body>
+</html>

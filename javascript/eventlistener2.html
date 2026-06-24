@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+    <form action="">
+        Enter your Value Here: <input type="text" name="sample" id="sample">
+        <div id="display">
+            
+        </div>
+
+        <div id="movr">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, inventore animi modi, nostrum ipsum provident porro, vitae molestiae eligendi blanditiis ipsam delectus unde. Perspiciatis totam maiores praesentium eos libero ullam!</p>
+        </div>
+    </form>    
+
+    <script>
+        smp=document.getElementById('sample')
+        dis=document.getElementById('display')
+        smp.addEventListener('change',()=>{
+            dis.innerText=smp.value
+        })
+        smp.addEventListener('focus',()=>{
+            smp.style.backgroundColor="green"
+        })
+        smp.addEventListener('blur',()=>{
+            smp.style.border="5px solid blue"
+            smp.style.backgroundColor="white"
+        })
+        smp.addEventListener('keypress',function(){
+            console.log("key Pressed")
+        })
+
+        document.getElementById('movr').addEventListener('mouseover',()=>{
+            document.getElementById('movr').style.color="red"
+        })
+        
+
+    </script>
+</body>
+</html>
