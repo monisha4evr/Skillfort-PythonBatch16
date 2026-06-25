@@ -1,0 +1,6 @@
+localStorage.setItem('name',"saran")
+localStorage.setItem('age',"20")
+localStorage.setItem('city',"Chennai")
+console.log(localStorage.getItem('city'))
+localStorage.removeItem('age')
+localStorage.clear()
