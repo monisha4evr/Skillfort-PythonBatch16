@@ -25,6 +25,9 @@ from calculation import add,mul
 print(add(5,3))
 print(mul(5,3))
 
+import calculation
+print(calculation.add(5,3))
+print(calculation.mul(5,3))
 
 # Exception Handling
 # try
@@ -44,6 +47,12 @@ except TypeError:
     print("Can't Add Number With String")
 except ValueError:
     print("Values")
+
+try:
+    a = "hi" + 5
+    b=int("abc")
+except (ValueError,TypeError) as e:
+    print("Error caught:", e)
     
 try:
     a="hi"+5
@@ -81,6 +90,22 @@ try:
     check_age(-3)
 except ValueError as e:
     print("Error",e)
+
+
+# 1. Define your own custom error name
+class InvalidAgeError(Exception):
+    pass
+
+def check_age(a):
+    if a < 0:
+        # 2. Raise your custom error
+        raise InvalidAgeError("Age must be greater than 0")
+    
+try:
+    check_age(-3)
+except InvalidAgeError as e:
+    print("Error:", e)
+
 
 #File Handling 
 

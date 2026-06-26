@@ -113,7 +113,7 @@ console.log(a[1][1])
 
 
 a=[1,2,3,4,5]
-console.log(a.map((i)=>{return i*5 })) 
+console.log(a.map((i)=>{return i*5 }))  
 console.log(a.filter((i)=>{return i%2==1}))
 console.log(a.reduce((i,n)=>{return i+n},5))
 

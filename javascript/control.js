@@ -37,7 +37,7 @@ if( age>=18 && (voter_id)){
 
 if else if 
 
-Syntax:
+//Syntax:
 if(cond1){
     //if block
 }else if(cond2){
@@ -57,8 +57,6 @@ if(a>b && a>c){
 }else{
     console.log("C is Biggest")
 }
-
-
 
 switch(exp){
      case cond1:
