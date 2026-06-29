@@ -1,0 +1,137 @@
+JavaScript Assessment (Question Paper)
+Section A – Choose the Correct Answer (20 × 1 = 20 Marks)
+
+1.Which keyword is block scoped?
+a) var
+b) global
+c) let
+d) static
+
+2.What will be the output?
+console.log(typeof null);
+a) null
+b) object
+c) undefined
+d) string
+
+3.Which operator checks both value and datatype?
+a) ==
+b) =
+c) ===
+d) !=
+
+4.Which keyword cannot be reassigned?
+a) var
+b) let
+c) const
+d) function
+
+5.What will be the output?
+console.log("5" - 2);
+a) 52
+b) 3
+c) Error
+d) undefined
+
+6.Which array method returns a new array?
+a) forEach()
+b) map()
+c) push()
+d) pop()
+
+7.Which method removes the first element of an array?
+a) pop()
+b) shift()
+c) splice()
+d) slice()
+
+8.What does DOM stand for?
+a) Document Object Model
+b) Data Object Management
+c) Dynamic Object Model
+d) Document Oriented Model
+
+9.Which method creates a new HTML element?
+a) createNode()
+b) createTag()
+c) createElement()
+d) appendChild()
+
+10.What does fetch() return?
+a) Array
+b) Object
+c) Promise
+d) JSON
+
+11.Which keyword pauses an async function?
+a) wait
+b) async
+c) await
+d) pause
+
+12.Which event occurs when a button is clicked?
+a) onchange
+b) onclick
+c) onmouseover
+d) onsubmit
+
+13.Which method adds a CSS class?
+a) className()
+b) classList.add()
+c) style.add()
+d) addClass()
+
+14.Which operator is used for the spread operator?
+a) ..
+b) ...
+c) **
+d) ::
+
+15.What will be the output? console.log(5 + true);
+
+16.Which loop is best suited for iterating over arrays?
+a) while
+b) do...while
+c) for...of
+d) switch
+
+17.Which keyword is used to declare an asynchronous function?
+18.Which method converts a JSON string into a JavaScript object?
+19.What will be the output? console.log(typeof []);
+20.Which method is used to attach an event to an element?
+
+
+Section B – Short Answer (15 × 2 = 30 Marks)
+
+21.Differentiate between == and ===.
+22.Explain Hoisting with an example.
+23.What is Closure?
+24.What is Event Bubbling?
+25.What is Event Delegation?
+26.Differentiate between synchronous and asynchronous programming.
+27.What is a Promise? Mention its three states.
+28.Differentiate between map() and forEach().
+29.Differentiate between slice() and splice().
+30.Explain Type Coercion with one example.
+31.Differentiate between Rest and Spread operators.
+32.What is Object Destructuring? Give an example.
+33.Differentiate between Function Declaration and Arrow Function.
+34.Differentiate between innerText and innerHTML.
+35.Explain the purpose of classList.toggle().
+
+Section C – Programs (10 × 5 = 50 Marks)
+
+36.Write a JavaScript function to check whether a number is Even or Odd.
+37.Write a program to reverse a string without using built-in methods.
+38.Write a program to find the largest number in an array.
+39.Write a program to count the number of vowels in a string.
+40.Write a function using the Rest operator that returns the sum of all numbers passed as arguments.
+41.Using the Fetch API, retrieve data from:
+	https://jsonplaceholder.typicode.com/users and print the response in the console.
+42.Create a button using HTML and display "Welcome to JavaScript" inside a paragraph when the button is clicked.
+43.Using JavaScript DOM Manipulation, dynamically create an <h2> element with the text "SkillFort Technologies" and append it to the webpage.
+44.Write a program to change the background color of a <div> using JavaScript.
+45.Write a JavaScript program that prints numbers from 1 to 20, but:
+	Print "Fizz" for multiples of 3
+	Print "Buzz" for multiples of 5
+	Print "FizzBuzz" for multiples of both

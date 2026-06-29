@@ -1,0 +1,50 @@
+1. Introduction (The "Why")
+What is Data? Pictures, numbers, text.
+What is a Database? A digital cupboard to store data safely.
+Why MySQL? Free, fast, and used by top companies like Facebook.
+Excel vs Database: Excel is for small data. 
+Database is for massive data.
+
+Databases like MySQL, Oracle, SQL Server
+3. Core Differences (Comparison Table)
+Feature                  SQL                    MySQL
+What is it? It is a Language.               It is a Software (Database).
+Full Form   Structured Query Language.      My + SQL (Named after co-founder's daughter 'My').
+Updates     It never changes easily         Updates come frequently with new software versions.
+            (Standardized).
+Purpose     Used to write queries to        Used to store, manage, and secure the data.
+            read/write data.
+Alternatives No alternatives                Oracle, PostgreSQL, SQL Server.
+            (It is the global standard).
+
+2. The Core Basics (The "Setup")
+Tables, Rows, Columns: Explain using a school attendance register example.
+Datatypes: INT (numbers), VARCHAR (text), DATE (dates).
+Primary Key: Unique ID, like a roll number. No duplicates allowed.
+
+Data Definition Language (DDL):Creating the structure/blueprint of the database.
+Data Manipulation Language (DML): INSERT, UPDATE, DELETE.
+Data Query Language (DQL):SELECT, WHERE clause, ORDER BY, GROUP BY, HAVING.
+                    Keywords: Aggregate functions like SUM, COUNT, AVG, MAX, MIN
+
+3. Basic Queries (CRUD Operations)
+CREATE: How to make a new database and table.
+INSERT: How to add student/employee details into the table.
+SELECT: How to see the stored data.
+UPDATE: How to change a phone number or address.
+DELETE: How to remove a row safely.
+
+4. Filtering Data (The "Search")
+WHERE clause: Filtering data (e.g., students with marks > 80).
+Operators: AND, OR, NOT, IN, BETWEEN.
+LIKE operator: Searching with patterns (e.g., names starting with 'A').
+
+5. Advanced Basics (The "Real Power")
+Aggregate Functions: COUNT, SUM, AVG, MAX, MIN.
+GROUP BY: Grouping data (e.g., count of students in each department).
+ORDER BY: Sorting data from A-Z or high-to-low.
+
+6. Connecting Tables (Joins)
+Foreign Key: How two tables connect (e.g., Student Table and Department Table).
+INNER JOIN: Getting matching data from both tables.
+LEFT JOIN: Getting all data from the main table, even if no match exists.
