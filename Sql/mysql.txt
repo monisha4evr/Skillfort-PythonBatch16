@@ -1,50 +1,238 @@
 1. Introduction (The "Why")
-What is Data? Pictures, numbers, text.
-What is a Database? A digital cupboard to store data safely.
-Why MySQL? Free, fast, and used by top companies like Facebook.
-Excel vs Database: Excel is for small data. 
-Database is for massive data.
+    What is Data? Pictures, numbers, text.
+    What is a Database? A digital cupboard to store data safely.
+    Why MySQL? Free, fast, and used by top companies like Facebook.
+    Excel vs Database: Excel is for small data. 
+    Database is for massive data.
 
 Databases like MySQL, Oracle, SQL Server
+-----------------------------------------
+
 3. Core Differences (Comparison Table)
-Feature                  SQL                    MySQL
-What is it? It is a Language.               It is a Software (Database).
-Full Form   Structured Query Language.      My + SQL (Named after co-founder's daughter 'My').
-Updates     It never changes easily         Updates come frequently with new software versions.
-            (Standardized).
-Purpose     Used to write queries to        Used to store, manage, and secure the data.
-            read/write data.
-Alternatives No alternatives                Oracle, PostgreSQL, SQL Server.
-            (It is the global standard).
+    Feature                  SQL                    MySQL
+    What is it? It is a Language.               It is a Software (Database).
+    Full Form   Structured Query Language.      My + SQL (Named after co-founder's daughter 'My').
+    Updates     It never changes easily         Updates come frequently with new software versions.
+                (Standardized).
+    Purpose     Used to write queries to        Used to store, manage, and secure the data.
+                read/write data.
+    Alternatives No alternatives                Oracle, PostgreSQL, SQL Server.
+                (It is the global standard).
 
+----------------------------------------
 2. The Core Basics (The "Setup")
-Tables, Rows, Columns: Explain using a school attendance register example.
-Datatypes: INT (numbers), VARCHAR (text), DATE (dates).
-Primary Key: Unique ID, like a roll number. No duplicates allowed.
 
-Data Definition Language (DDL):Creating the structure/blueprint of the database.
-Data Manipulation Language (DML): INSERT, UPDATE, DELETE.
-Data Query Language (DQL):SELECT, WHERE clause, ORDER BY, GROUP BY, HAVING.
-                    Keywords: Aggregate functions like SUM, COUNT, AVG, MAX, MIN
+    Tables, Rows, Columns: Explain using a school attendance register example.
+    Datatypes: INT (numbers), VARCHAR (text), DATE (dates).
+    Primary Key: Unique ID, like a roll number. No duplicates allowed.
+
+    Data Definition Language (DDL):Creating the structure/blueprint of the database.
+    Data Manipulation Language (DML): INSERT, UPDATE, DELETE.
+    Data Query Language (DQL):SELECT, WHERE clause, ORDER BY, GROUP BY, HAVING.
+                        Keywords: Aggregate functions like SUM, COUNT, AVG, MAX, MIN
 
 3. Basic Queries (CRUD Operations)
-CREATE: How to make a new database and table.
-INSERT: How to add student/employee details into the table.
-SELECT: How to see the stored data.
-UPDATE: How to change a phone number or address.
-DELETE: How to remove a row safely.
+    CREATE: How to make a new database and table.
+    INSERT: How to add student/employee details into the table.
+    SELECT: How to see the stored data.
+    UPDATE: How to change a phone number or address.
+    DELETE: How to remove a row safely.
 
 4. Filtering Data (The "Search")
-WHERE clause: Filtering data (e.g., students with marks > 80).
-Operators: AND, OR, NOT, IN, BETWEEN.
-LIKE operator: Searching with patterns (e.g., names starting with 'A').
+    WHERE clause: Filtering data (e.g., students with marks > 80).
+    Operators: AND, OR, NOT, IN, BETWEEN.
+    LIKE operator: Searching with patterns (e.g., names starting with 'A').
 
 5. Advanced Basics (The "Real Power")
-Aggregate Functions: COUNT, SUM, AVG, MAX, MIN.
-GROUP BY: Grouping data (e.g., count of students in each department).
-ORDER BY: Sorting data from A-Z or high-to-low.
+    Aggregate Functions: COUNT, SUM, AVG, MAX, MIN.
+    GROUP BY: Grouping data (e.g., count of students in each department).
+    ORDER BY: Sorting data from A-Z or high-to-low.
 
 6. Connecting Tables (Joins)
-Foreign Key: How two tables connect (e.g., Student Table and Department Table).
-INNER JOIN: Getting matching data from both tables.
-LEFT JOIN: Getting all data from the main table, even if no match exists.
+    Foreign Key: How two tables connect (e.g., Student Table and Department Table).
+    INNER JOIN: Getting matching data from both tables.
+    LEFT JOIN: Getting all data from the main table, even if no match exists.
+---------------------
+
+Data types:
+Numeric
+
+INT 
+BIGINT
+DECIMAL
+FLOAT
+
+String
+
+CHAR
+VARCHAR
+TEXT
+
+Date
+
+DATE
+DATETIME
+TIMESTAMP
+
+Boolean
+
+BOOLEAN
+
+
+DDL - Data Definition Language:
+    CREATE
+    ALTER
+    DROP
+    TRUNCATE
+
+DML - Data Manipulation Language
+    INSERT
+    UPDATE
+    DELETE
+
+DQL
+    SELECT
+
+DCL - Data Control Language 
+1. managing User and access 
+  GRANT Permission on database.table to 'username'@'host';
+
+
+2. access From any Machine
+   GRANT SELECT ON school.* TO 'student'@'%';
+
+3. Allow access from one specific machine
+  GRANT INSERT, UPDATE ON school.students TO 'staff'@'192.168.1.25'; 
+
+Revoke: 
+Revoke privileges on database.table from  'username'@'host';
+
+TCL - Transaction Control Language:
+1. commit  Permanentely saves all changes 
+    Changes cannot be unDone using Rollback 
+
+    BEGIN TRANSACTION 
+        update stud_det set active_status=0 where id=2
+    commit
+
+2 Rollback - undoes all changes made during the current transaction since the last commit or save point
+
+BEGIN TRANSACTION
+ delete from stud_det where id=2 
+Rollback;
+
+3. savePoint:
+    Temporary Point within  a transaction to which you can later rollback without affecting the entire transaction 
+
+    BEGIN TRANSACTION 
+        update
+    savepoint after_upd 
+        update 
+    rollback to savePoint after_upd;
+    commit
+
+Utility:
+
+use database;
+show database;
+describe tablename/desc tablename 
+
+ACID Property :
+Atomicity - Transaction are all or nothing 
+Consistency - Data remains Valid before and after transaction 
+Isolation - Transaction run independently 
+Durability - once committed data stay saved even after failure . 
+
+
+Constraints: 
+
+specify rules for the data in table:
+ensure Accuracy and reliablity of data 
+if there is any violation between constraints and data action . the action is aborted.
+it can be column level / table leve; 
+
+NOT NULL - Ensures Column cannot have NULL 
+Unique - No Duplicate Allowed 
+Primary Keys - A combination of NOT NULL and unique 
+Foreign KEY : Prevents actions that would destroy links between tables 
+CHECK - Ensure that Value satisfy Specific Condition 
+Default - Set a default value for a Column 
+CREATE index - used to create and retrive data from the Database very quickly;
+
+Mysql Execution ORDER
+---------------------
+From [Identifies tables involved]
+JOIN [Specified join operation to combine data from multiple table ]
+ON 
+where 
+group by 
+HAVING 
+select 
+Distinct 
+Order by 
+limit & offset
+
+INDEX : 
+CREATE INDEX Index_name on Tablename(Column_name)
+Drop INDEX index_name on Tablename
+
+eg:
+CREATE INDEX indexname on Employees(lastname):
+
+
+Index, composite index, unique index, 
+SHOW INDEX FROM tablename
+
+Foreign Key:
+alter table stud_details add constraint course_det foreign key(course) references course_details(id);
+
+subquery is simply a query nested inside
+
+
+The 3 Main Types of Subqueries
+1.Scalar Subquery (Returns a single value)
+This subquery returns exactly one row and one column (a single cell of data). 
+You can use it with standard comparison operators like =, >, or <.
+
+SELECT name, salary 
+FROM employees 
+WHERE salary > (SELECT AVG(salary) FROM employees);
+
+2. Row/Column Subquery (Returns a list of values) 
+This subquery returns multiple rows but only one column. You must use it with operators designed for lists, like IN, ANY, or ALL.
+
+Scenario: Find all employees working in departments located in 'New York'.
+SELECT name 
+FROM employees 
+WHERE dept_id IN (SELECT id FROM departments WHERE location = 'New York');
+
+3. Correlated Subquery (The "Dependent" Query)
+a correlated subquery references a column from the outer query
+
+SELECT name, salary, dept_id
+FROM employees e
+WHERE salary > (
+    SELECT AVG(salary) 
+    FROM employees 
+    WHERE dept_id = e.dept_id -- Links inner query to outer row
+);
+
+
+In the SELECT clause
+
+SELECT name, 
+       (SELECT count(*) FROM orders WHERE customer_id = c.id) as total_orders
+FROM customers c;
+
+In the FROM clause (To treat the subquery result like a temporary table. 
+Note: MySQL requires you to give these an alias name.)
+
+SELECT AVG(max_sal) 
+FROM (SELECT dept_id, MAX(salary) as max_sal FROM employees GROUP BY dept_id) as dept_maxes;
+
+
+select * from stud_details s where not exists (select 1 from course_details c where c.id=s.course); 
+
+find employees who earn more than everyone in the HR department
+find employees whos earn more than at least one person in the it depart.
+select * name,salary from employees where salary > any (select Salary from employees where dept='it);
