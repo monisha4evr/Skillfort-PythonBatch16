@@ -75,7 +75,7 @@ create table employess (
 alter table employess change id id int not null auto_increment;
 
 select * from department;
-insert into department (depart_name) values ('IT'),('HR');
+insert into department (depart_name) values ('accounts'),('sales');
 select * from employess limit 10;
 insert into employess (employee_name,department,salary) values ('Monuis',1,2500000),('prem',1,1213333);
 
@@ -86,8 +86,33 @@ select * from employess as e where not exists( select 1 from department d where 
 
 -- join 
 -- inner join ,left,right,cross
+select * from employess e   join department as d on e.department = d.id  ;
+select * from employess e   left join department as d on e.department = d.id  ;
+select * from employess e   right join department as d on e.department = d.id  ;
+select * from employess e  cross join department as d on e.department = d.id  ;
 
-select * from employess e join department d on e.department=d.id;
+create index idx_employee_name on employess(employee_name);
+-- drop index idx_employee_name
+show index from employess;
+show errors;
+
+create view  emp_salry_list as 
+select e.id,e.employee_name,d.depart_name,e.salary from employess as e 
+join department as d 
+on e.department = d.id  ;
+
+select * from emp_salry_list order by depart_name limit 2,5; 
+
+
+
+
+
+
+
+
+
+
+
 
 
 

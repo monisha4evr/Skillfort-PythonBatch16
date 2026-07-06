@@ -1,6 +1,12 @@
-1. Arithmetic = > + - * / //
-2. comparison => == >= <= !=
-3. Assignment => =,+=,-=
-4.logical => and , or , not
 
-print(10 and 0)
+try:
+    a= int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+
+    print("Result:", a / b)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+
+except ValueError:
+    print("Please enter valid numbers.")

@@ -35,3 +35,9 @@ print("Hi" * 0)  # ''
 
 str="flower"
 print(str.upper())
+
+s=["Apple","Orange","Banana"]
+s.sort()
+m=sorted(s)
+print(s,m)
+
