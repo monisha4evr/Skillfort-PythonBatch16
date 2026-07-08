@@ -1,0 +1,12 @@
+
+
+    
+    Category: {{category|upper}}<br>
+    Fruit Name : {{name}}<br>
+    <h3>City</h3>
+    {% for i in city%}
+        {{i}}
+    {% endfor %}
+
+    <br>
+    Received At : {{received_at|date:"m"}}
