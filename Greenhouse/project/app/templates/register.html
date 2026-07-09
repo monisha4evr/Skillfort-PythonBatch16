@@ -1,8 +1,16 @@
 <form action="" method="POST">
     {% csrf_token %}
-    Student<input type="text" name="student" id="student">
-    Student<input type="text" name="student" id="student">
-    Student<input type="text" name="student" id="student">
+    Student Name<input type="text" name="student_name" id="student_name">
+    depart_name<input type="text" name="depart_name" id="depart_name">
+    address<input type="text" name="address" id="address">
+    course<input type="text" name="course" id="course">
+    fees_paid<input type="text" name="fees_paid" id="fees_paid">
     <button>Register</button>
 
 </form>
+<hr>
+
+<h2>Student LIST<h2>
+{% for sd in student_details%}
+    {{sd}}
+{%endfor%}

@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from datetime import date
-from .models import Student_details
+from .models import StudentDetails
 
 # Create your views here.
 def home(request):
@@ -22,7 +22,22 @@ def about(request):
 
 def student_details(request):
     if request.method=="POST":
-        pass
+        #print(request.POST.get('student_name'))
+        student_name=request.POST.get('student_name')
+        depart_name=request.POST.get('depart_name')
+        addr=request.POST.get('address')
+        course=request.POST.get('course')
+        fees_paid=request.POST.get('fees_paid')
 
-    var=Student_details.objects.all()
+        sd=StudentDetails.objects.create(
+            student_name=student_name,
+            depart_name=depart_name,
+            address=addr,
+            course=course,
+            fees_paid=fees_paid
+        )
+        print(sd);
+        return redirect("home")
+        # stud_details=StudentDetails.objects.all()
+        # return render(request,"register.html",{"student_details":stud_details})
     return render(request,"register.html")
