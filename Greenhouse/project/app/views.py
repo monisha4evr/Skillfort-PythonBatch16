@@ -37,7 +37,19 @@ def student_details(request):
             fees_paid=fees_paid
         )
         print(sd);
-        return redirect("home")
-        # stud_details=StudentDetails.objects.all()
-        # return render(request,"register.html",{"student_details":stud_details})
+        # return redirect("Student_details")
+        stud_details=StudentDetails.objects.all()
+        return render(request,"register.html",{"student_details":stud_details})
     return render(request,"register.html")
+
+def update_student(request,id):
+    sd=StudentDetails.objects.get(id=id)
+    if request.method =="POST":
+        sd.student_name=request.POST.get('student_name')
+        sd.depart_name=request.POST.get('depart_name')
+        sd.address=request.POST.get('address')
+        sd.course=request.POST.get('course')
+        sd.fees_paid=request.POST.get('fees_paid')
+        sd.save()
+        return redirect ("Student_details")
+    return render(request,"update.html")
