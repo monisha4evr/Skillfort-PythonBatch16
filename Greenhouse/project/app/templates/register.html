@@ -11,6 +11,31 @@
 <hr>
 
 <h2>Student LIST<h2>
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <th>Department Name</th>
+            <th>Address</th>
+            <th>Course</th>
+            <th>Fees Paid</th>
+            <th>Action</th>
+        </tr>
+
+    
 {% for sd in student_details%}
-    {{sd.student_name}}
+<tr>
+    
+   <td>{{sd.student_name}}</td> 
+    <td>{{sd.depart_name}}</td> 
+    <td>{{sd.address}}</td> 
+    <td>{{sd.course}}</td> 
+    <td>{{sd.fees_paid}}</td> 
+    <td> <a href="{% url 'update_student' sd.id %}">Edit</a>
+    |
+    <a href="{% url 'delete_student' sd.id %}"
+       onclick="return confirm('Delete this Student?')">
+       Delete
+    </a></td>
+</tr>
 {%endfor%}
+</table>

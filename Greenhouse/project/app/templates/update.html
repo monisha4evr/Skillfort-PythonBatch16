@@ -1,10 +1,10 @@
 <form action="" method="POST">
     {% csrf_token %}
-    Student Name<input type="text" name="student_name" id="student_name">
-    depart_name<input type="text" name="depart_name" id="depart_name">
-    address<input type="text" name="address" id="address">
-    course<input type="text" name="course" id="course">
-    fees_paid<input type="text" name="fees_paid" id="fees_paid">
+    Student Name<input type="text" name="student_name" id="student_name"  value="{{ student.student_name }}">
+    depart_name<input type="text" name="depart_name" id="depart_name" value="{{ student.depart_name }}"> 
+    address<input type="text" name="address"  value="{{ student.address }}" id="address">
+    course<input type="text" name="course" id="course" value="{{ student.course }}">
+    fees_paid<input type="text" name="fees_paid" id="fees_paid" value="{{ student.fees_paid }}">
     <button>Register</button>
 
 </form>
