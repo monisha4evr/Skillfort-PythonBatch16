@@ -108,3 +108,19 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect("signin")
+
+def styleexample(request):
+    return render(request,"example_base.html")
+
+from .forms import StudentForm
+def student_form(request):
+    if request.method == "POST":
+        form=StudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("student_form")
+    else:
+        form=StudentForm()
+
+    st=StudentDetails.objects.all()
+    return render(request,"studentform.html",{"form":form,"stud_det":st})

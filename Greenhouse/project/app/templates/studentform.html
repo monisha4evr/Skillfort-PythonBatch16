@@ -1,0 +1,13 @@
+<form action="" method="post">
+    {%csrf_token%}
+    {% comment %} {{form.as_p}} {% endcomment %}
+    <table class="table">
+        {{form.as_table}}
+    </table>
+    <button type="submit">Submit</button>
+</form>
+
+
+{%for i in stud_det%}
+{{i}}
+{%endfor%}

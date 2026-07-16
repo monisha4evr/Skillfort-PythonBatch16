@@ -11,4 +11,6 @@ urlpatterns = [
     path('signup/',views.signup,name="signup"),
     path('signin/',views.signin,name="signin"),
     path('logout/',views.signout,name="signout"),
+    path('style/',views.styleexample),
+    path('student_form/',views.student_form,name="student_form"),
 ]

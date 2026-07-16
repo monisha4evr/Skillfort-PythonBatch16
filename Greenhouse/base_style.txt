@@ -1,0 +1,27 @@
+1. create one external css file 
+STATIC/css/style.css 
+
+2. create one basefile in template 
+base.html 
+add 
+{% block content %}
+
+{% endblock %}
+
+3. all other files. 
+{% extends 'base.html' %} // first line
+
+{% block content %}
+    // Statement
+{% endblock %}
+
+
+
+to add Style in Page.
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+
+

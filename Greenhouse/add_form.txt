@@ -1,0 +1,68 @@
+forms.py (create inside App Folder)
+
+File Structure:
+myproject/
+│
+├── myproject/
+│
+├── app/
+│   ├── migrations/
+│   ├── templates/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── forms.py   ✅ <-- Inga create pannanum
+│   └── admin.py
+│
+└── manage.py
+
+- purpose
+    HTML form structure define panna
+    Validation write panna
+    Model-oda connect panna
+    Form save panna
+
+Step 1: forms.py in app folder
+******************************
+
+from django.forms import ModelForm
+from .models import StudentDetails 
+
+class StudentForm(ModelForm):
+    class Meta:
+        model = StudentDetails
+        fields = "__all__"
+        #fields = ['name','address','course]
+
+step 2: URLs.py:
+path('student_form/',views.student_form,name="student_form"),
+
+Step 3: views.py
+
+from .forms import StudentForm
+def student_form(request):
+    if request.method == "POST":
+        form=StudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("student_form")
+    else:
+        form=StudentForm()
+
+    st=StudentDetails.objects.all()
+    return render(request,"studentform.html",{"form":form,"stud_det":st})
+
+step 4: html
+<form action="" method="post">
+    {%csrf_token%}
+    {% comment %} {{form.as_p}} {% endcomment %}
+    <table class="table">
+        {{form.as_table}}
+    </table>
+    <button type="submit">Submit</button>
+</form>
+
+
+{%for i in stud_det%}
+{{i}}
+{%endfor%}
