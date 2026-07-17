@@ -1,0 +1,91 @@
+Filter :
+    Filter is used to retrieve only the records that match a condition.
+example :
+    StudentDetails.objects.filter(depart_name="CSE")
+    StudentDetails.objects.filter(course="Python")
+
+step 1: 
+    in HTML 
+    <form method="GET">
+    <input type="text"
+           name="course"
+           placeholder="Search Course">
+
+    <button type="submit">
+        Search
+    </button>
+</form>
+
+step 2:
+    course = request.GET.get("course")
+
+    if course:
+        st = StudentDetails.objects.filter(course=course)
+    else:
+        st = StudentDetails.objects.all()
+
+        To check Partially:
+
+    StudentDetails.objects.filter(course__icontains=course)
+
+
+
+Step 3: 
+
+multiple Filter:
+<form method="GET">
+
+<input type="text"
+       name="student_name"
+       placeholder="Student Name">
+
+<input type="text"
+       name="course"
+       placeholder="Course">
+
+<button>Search</button>
+
+</form>
+
+view :
+
+st = StudentDetails.objects.all()
+
+name = request.GET.get("student_name")
+course = request.GET.get("course")
+
+if name:
+    st = st.filter(student_name__icontains=name)
+
+if course:
+    st = st.filter(course__icontains=course)
+
+
+StudentDetails.objects.filter(course="Python")
+
+# Ignore case
+StudentDetails.objects.filter(course__iexact="python")
+
+# Contains
+StudentDetails.objects.filter(course__contains="Py")
+
+# Ignore case + Contains
+StudentDetails.objects.filter(course__icontains="py")
+
+# Starts with
+StudentDetails.objects.filter(course__startswith="P")
+
+# Ends with
+StudentDetails.objects.filter(course__endswith="on")
+
+# Greater than
+StudentDetails.objects.filter(fees_paid__gt=5000)
+
+# Less than
+StudentDetails.objects.filter(fees_paid__lt=5000)
+
+# Greater than or equal
+StudentDetails.objects.filter(fees_paid__gte=5000)
+
+# Less than or equal
+StudentDetails.objects.filter(fees_paid__lte=5000)

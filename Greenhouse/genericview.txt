@@ -1,0 +1,105 @@
+Generic View:
+
+Generic Views are Django's built-in views. They reduce the amount of code we write.
+
+Generic Views
+      │
+      ├── Display Generic Views
+      │      │
+      │      ├── TemplateView
+      │      ├── ListView
+      │      └── DetailView
+      │
+      └── Editing Generic Views
+             │
+             ├── FormView
+             ├── CreateView
+             ├── UpdateView
+             └── DeleteView
+
+
+from django.views.generic import TemplateView
+
+
+Step 1: 
+create html page
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TemplateView</title>
+</head>
+<body>
+
+<h1>Welcome to Django Generic Views</h1>
+
+</body>
+</html>
+
+step 2:  Urls.py
+from django.views.generic import TemplateView
+ path(
+        "home/",
+        TemplateView.as_view(template_name="home.html"),
+        name="home"
+    ),
+
+
+Type 2: 
+urls.py
+  path("home1/",TemplateView.as_view(template_name="tempv.html",extra_context={
+            "name": "Monisha",
+            "course": "Python Django"
+        }),name="templatehome"),
+
+
+
+
+
+Another Method:
+View:
+from django.views.generic import TemplateView
+
+class ClassHome(TemplateView):
+    template_name = "class/class_home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["name"] = "mm"
+        context["age"] = 99
+
+        return context
+
+
+class ClassHome(TemplateView): → Create a class that inherits from TemplateView.
+template_name → Specifies which HTML file to render.
+get_context_data() → Used to send data from the view to the template.
+super().get_context_data(**kwargs) → Gets the default context from the parent TemplateView.
+context["name"] = "mm" → Adds a custom value to the context.
+return context → Sends all context data to the template.
+
+urls:
+from django.urls import path
+from .views import ClassHome
+
+urlpatterns = [
+    path("class-home/", ClassHome.as_view(), name="class_home"),
+]
+
+HTML (class/class_home.html)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TemplateView</title>
+</head>
+<body>
+
+<h1>TemplateView Example</h1>
+
+<h2>Name : {{ name }}</h2>
+<h2>Age : {{ age }}</h2>
+
+</body>
+</html>

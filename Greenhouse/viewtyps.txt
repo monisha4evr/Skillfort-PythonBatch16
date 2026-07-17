@@ -1,0 +1,63 @@
+Generic Views
+      │
+      ├── Display Generic Views
+      │      │
+      │      ├── TemplateView
+      │      ├── ListView
+      │      └── DetailView
+      │
+      └── Editing Generic Views
+             │
+             ├── FormView
+             ├── CreateView
+             ├── UpdateView
+             └── DeleteView
+
+
+
+from django.views.generic import TemplateView,ListView,DetailView
+class ClassHome(TemplateView):
+    template_name='class/class_home.html'
+    
+    def get_context_data(self, **kwargs):
+        context= super().get_context_data(**kwargs)
+        context['name']="mm"
+        context['age']=99
+        
+        return context
+    
+#from django.views.generic import ListView
+
+class StudentsView(ListView):
+    model=Students
+    template_name='class/students_view.html'
+    context_object_name='students'
+    paginate_by=5
+    
+    def get_queryset(self):
+        return Students.objects.filter(is_registered = True)
+    
+class StudentDetails(DetailView):
+    model=Students
+    template_name='class/student_detail.html'
+    context_object_name='student'
+    
+from django.views.generic.edit import CreateView,UpdateView,DeleteView 
+from django.urls import reverse_lazy
+class StudentCreate(CreateView):
+    model=Students
+    template_name="class/student_create.html"
+    #fields=["name","roll_no","is_registered","joined_date"]
+    fields="__all__"
+    success_url=reverse_lazy("student_view")
+    
+class StudentUpdate(UpdateView):
+    model=Students
+    template_name="class/student_update.html"
+    fields=["name","roll_no","is_registered"]
+    success_url=reverse_lazy("student_view")
+    
+class StudentDelete(DeleteView):
+    model=Students
+    template_name="class/student_delete.html"
+    success_url=reverse_lazy("student_view")
