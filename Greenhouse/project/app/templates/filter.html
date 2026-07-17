@@ -1,0 +1,15 @@
+<form action="" method="get">
+    <label for="searchstudent"> Student Name</label>
+    <input type="text" name="searchstudent" id="searchstudent">
+    <label for="searchdepartment"> Department Name</label>
+    <input type="text" name="searchdepartment" id="searchdepartment">
+    <button type="submit">Search</button>
+</form>
+
+{%for i in student%}
+    {{i.student_name}}
+    {{i.depart_name}}
+    {{i.address}}
+    {{i.course}}
+    {{i.fees_paid}}
+{%endfor%}

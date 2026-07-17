@@ -6,16 +6,16 @@ Generic Views
       │
       ├── Display Generic Views
       │      │
-      │      ├── TemplateView
-      │      ├── ListView
-      │      └── DetailView
+      │      ├── TemplateView (Display a static HTML page)
+      │      ├── ListView (Display multiple records from a model)
+      │      └── DetailView (Display a single record based on its ID or slug)
       │
       └── Editing Generic Views
              │
-             ├── FormView
-             ├── CreateView
-             ├── UpdateView
-             └── DeleteView
+             ├── FormView (Handle a normal Django form (not necessarily tied to a model))
+             ├── CreateView (Insert/Create a new record)
+             ├── UpdateView (Update an existing record)
+             └── DeleteView (Delete a record)
 
 
 from django.views.generic import TemplateView

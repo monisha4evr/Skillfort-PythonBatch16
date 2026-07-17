@@ -124,3 +124,26 @@ def student_form(request):
 
     st=StudentDetails.objects.all()
     return render(request,"studentform.html",{"form":form,"stud_det":st})
+
+def student_filter(request):
+    searchstud = request.GET.get('searchstudent')
+    searchdepart = request.GET.get('searchdepartment')
+    st=StudentDetails.objects.all()
+    if searchdepart:
+        st=StudentDetails.objects.filter(depart_name__icontains=searchdepart) 
+    if searchstud :
+        st=StudentDetails.objects.filter(student_name__icontains=searchstud) 
+    
+    return render(request,"filter.html",{"student":st})
+
+
+from django.views.generic import TemplateView
+class TemplateExampleView(TemplateView):
+    template_name="class/tempview.html"
+
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        context['name']="orange"
+        context['color']="RedishOrange"
+        context['price']="210.2"
+        return context
