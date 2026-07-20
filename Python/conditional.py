@@ -51,6 +51,8 @@ match  day:
     case _ :
         print("Good Day")
 
+print("Even" if 13%2==0 else "Odd")
+
     
     
 

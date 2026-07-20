@@ -137,7 +137,7 @@ def student_filter(request):
     return render(request,"filter.html",{"student":st})
 
 
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,ListView,DetailView
 class TemplateExampleView(TemplateView):
     template_name="class/tempview.html"
 
@@ -147,3 +147,16 @@ class TemplateExampleView(TemplateView):
         context['color']="RedishOrange"
         context['price']="210.2"
         return context
+    
+class ListExampleView(ListView):
+    model=StudentDetails
+    template_name="class/glistview.html"
+    context_object_name='stud'
+
+class DetailExampleView(DetailView):
+    model=StudentDetails
+    template_name="class/detailsview.html"
+    context_object_name='stud'
+
+
+from django.views.generic.edit import CreateView,UpdateView,DeleteView

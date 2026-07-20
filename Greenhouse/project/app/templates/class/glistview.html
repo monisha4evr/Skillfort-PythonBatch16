@@ -1,0 +1,17 @@
+
+<table border =1>
+    <tr>
+        <th>Student name</th>
+        <th>Department</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+{%for i in stud %}
+<tr>
+<td>{{i.student_name}}</td>
+<td>{{i.depart_name}}</td>
+<td>{{i.address}}</td>
+<td><a href="{% url 'detail_example' i.id %} ">View</a></td>
+</tr>
+{%endfor%}
+</table>

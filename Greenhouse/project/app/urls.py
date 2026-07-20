@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from django.views.generic import TemplateView
-from .views import TemplateExampleView
+from .views import TemplateExampleView,ListExampleView,DetailExampleView
 
 urlpatterns = [
     path('',views.home,name="home"),
@@ -18,4 +18,6 @@ urlpatterns = [
     path('student-filter/',views.student_filter,name="student_filter"),
     path('template-home/',TemplateView.as_view(template_name="templatehome.html",extra_context={"name":"Apple","color":"red"}),name="template_home"),
     path('template-examp/', TemplateExampleView.as_view(), name="template_example"),
+    path('listview-examp/', ListExampleView.as_view(), name="list_example"),
+    path('detailview-examp/<int:pk>/', DetailExampleView.as_view(), name="detail_example"),
 ]
