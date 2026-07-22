@@ -160,3 +160,59 @@ class DetailExampleView(DetailView):
 
 
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
+
+
+
+
+
+
+# REST FRAMEWORK:
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import StudentSerilaizers
+
+class StudentApiView(APIView):
+    def get(self,request):
+        st=StudentDetails.objects.all()
+        serializer=StudentSerilaizers(st,many=True)
+        return Response(serializer.data)
+    
+    def post(self,request):
+        Stud=StudentSerilaizers(data=request.data)
+        if Stud.is_valid():        
+            Stud.save()
+            return Response(Stud.data)
+        else:
+            return Response(Stud.errors)
+
+    def put(self, request, id):
+        stud = StudentDetails.objects.get(id=id)
+
+        serializer = StudentSerilaizers(stud, data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # Delete Book
+    def delete(self, request, id):
+        stud = StudentDetails.objects.get(id=id)
+        stud.delete()
+        return Response({"message": "Book Deleted Successfully"})
+
+
+
+from rest_framework.decorators import api_view
+
+@api_view(['POST'])
+def stud_details(request):
+    Stud=StudentSerilaizers(data=request.data)
+    if Stud.is_valid():        
+        Stud.save()
+        return Response(Stud.data)
+    else:
+        return Response(Stud.errors)
